@@ -21,6 +21,8 @@ php自作
 MAMP/MySQL/PHP
 # データベース
 データベース名　：　laravel_app_db
-
-お使いのphpmyAdminに上のデータベースを作り、
-入っているDB.sqlをインポートしていただければお使いいただけるようになると思います。
+# アプリのご利用について
+ご利用環境のMAMPもしくはXAMPP起動と共に
+phpmyAdminでDBを起動し、ターミナルまたはコマンドプロントで
+「　php artisan db:seed　」を実行してサンプルデータの作成と
+「　php artisan serve 」でサーバーの立ち上げ、表示がされるか確認をしてください。
