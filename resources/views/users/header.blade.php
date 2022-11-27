@@ -19,7 +19,7 @@
     <div class="header_top">
          
         <div class="logo">
-           <a href="{{ route('login') }}">MOTI LOG</a> 
+           <a href="{{ route('login') }}">MOCHI LOG</a> 
         </div>
         
         

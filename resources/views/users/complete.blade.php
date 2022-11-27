@@ -20,7 +20,7 @@
     
 <div class="completetop">
 
-    <h1>登録が完了しました</h1>
+    <h1>登録が完了しました。</h1>
 
     <form action="{{ route('edit_index') }}" method = "post">
     @csrf

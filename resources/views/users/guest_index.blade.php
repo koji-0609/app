@@ -20,55 +20,67 @@
 @include('users.header')<br>
     
 <div class="guestindextop">
-    
+    <div class="rod">
+        <button id="rod">更新</button>
+    </div>
     <h1>{{ $guest_contents[0]['title'] }}</h1>
  
 
-    @foreach($guest_contents as $index => $guest_content)
+    @foreach($guest_contents as $index => $guest_contents2)
 
-
-    @if ($guest_content['role'] == 0)
+        @if ($guest_contents2['role'] == 0)
         
-        <div class="title">
-            <button>STAGE{{ $index+1 }}</button><br>
-        </div>
-    
-    
-        <div class="box" value="{{ $guest_content -> role }}">
-            <p>{{ $guest_content -> contents }}</p>
-            <div id="role">
-                <button id="achieve" value="{{ $guest_content -> id }}">達成</button>
-            </div>
-        </div>
-   
-    @else ($guest_content['role'] == 1)
-
-            <div class="title">
-                <button>STAGE{{ $index+1 }}</button><br>
-            </div>
-        
-        
-            <div class="box" value="{{ $guest_content -> role }}">
-                <p>{{ $guest_content -> contents }}</p>
-                <div id="role" class="role_color">
-                    <button id="achieve"  value="{{ $guest_content -> id }}">達成</button>
+                <div class="title">
+                    <button>STAGE{{ $index+1 }}</button><br>
                 </div>
-            </div>
+            
+            
+                <div class="box" value="{{ $guest_contents2 -> role }}">
+                    <p>{{ $guest_contents2 -> contents }}</p>
+                    <div id="role">
+                        <button id="achieve" value="{{ $guest_contents2 -> id }}">達成</button>
+                    </div>
+                </div>
+           
+        @else ($guest_contents2['role'] == 1)
         
-    @endif
+                <div class="title" id="role_title">
+                    <button>STAGE{{ $index+1 }}</button><br>
+                </div>
+            
+            
+                <div class="box" value="{{ $guest_contents2 -> role }}">
+                    <p>{{ $guest_contents2 -> contents }}</p>
+                    <div id="role" class="role_color">
+                        <button id="achieve"  value="{{ $guest_contents2 -> id }}">達成</button>
+                    </div>
+                </div>
+            
+        @endif
     
+
 
     @endforeach   
+    
+    @if ($gole == "no_gole") 
 
         <div class="title">
             <button>GOLE</button><br>
         </div>
         <div class="box">
-            <p>{{ $guest_content -> gole }}</p>
-            <div id="role">
-                <button id="achieve">達成</button>
-            </div>
+            <p>{{ $guest_contents2 -> gole }}</p>
         </div>
+
+    @else ($gole == "yes_gole") 
+
+        <div class="title" id="role_gole">
+            <button>GOLE</button><br>
+        </div>
+        <div class="box">
+            <p>{{ $guest_contents2 -> gole }}</p>
+        </div>
+
+    @endif
 
 
 <script>
@@ -89,6 +101,12 @@ $(this).toggleClass('role_color');
 });
 
 
+//更新処理
+$(document).on('click',"#rod", function() {
+
+    window.location.reload();
+
+});
 
 
 

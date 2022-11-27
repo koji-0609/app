@@ -514,6 +514,7 @@ body {
 
 
 
+
 .guestindextop button {
     display: flex;
     justify-content: center;
@@ -548,6 +549,52 @@ body {
 
 
 
+.rod {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.rod button {
+    width: 8%;
+    font-size: 15px;
+    padding: 0;
+}
+
+.rod button::after {
+    content: none;
+    width: 0px;
+    height: 0px;
+    border-bottom:none;
+    border-right:none;
+
+}
+
+#rod {
+    margin: 15px 25px 0 0 ;
+}
+
+
+/*アコーディオンで現れるエリア*/
+.box {
+    display: none;/*はじめは非表示*/
+    background: #f3f3f3;
+    margin:0 auto 20px auto;
+    padding: 3%;
+    width: 50%;
+    color: black;
+    border-radius: 25px;
+}
+
+.box button {
+    background-color: rgba(217,214,219,1);
+}
+
+
+
+
+
 .role_color button {
     display: flex;
     justify-content: center;
@@ -555,31 +602,46 @@ body {
     margin: 30px auto;
     padding: 10px 20px;
     width: 30%;
-    color: black;
+    color: white;
     font-size: 18px;
     font-weight: 700;
-    background: rgba(255,215,92,1);
+    background-color: RGBA(251,163,31,1);
+
     border-radius: 50vh;
     text-decoration: none;
     border:none;
 }
 
-.role_title_color button {
+#role_title button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px auto;
     padding: 10px 20px;
     width: 30%;
-    color: black;
+    color: white;
     font-size: 18px;
     font-weight: 700;
-    background: rgba(255,215,92,1);
+    background-color: RGBA(251,163,31,1);
     border-radius: 50vh;
     text-decoration: none;
     border:none;
 }
 
+#role_gole button {
+    color: RGBA(251,163,31,1);
+    background: RGBA(236,255,119,1);
+}
+
+#role_gole button::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-bottom: 3px solid RGBA(251,163,31,1);
+    border-right: 3px solid RGBA(251,163,31,1);
+    transform: rotate(45deg);
+}
 
 
 
@@ -614,7 +676,7 @@ body {
     color: black;
     font-size: 18px;
     font-weight: 700;
-    background: RGBA(32,184,254,1);
+    background: RGBA(255,215,92,1);
     border-radius: 50vh;
     text-decoration: none;
     border:none;
@@ -646,7 +708,7 @@ body {
     color: black;
     font-size: 18px;
     font-weight: 700;
-    background: RGBA(32,184,254,1);
+    background: RGBA(255,215,92,1);
     border-radius: 50vh;
     text-decoration: none;
     border:none;
@@ -678,7 +740,7 @@ body {
     color: black;
     font-size: 18px;
     font-weight: 700;
-    background: RGBA(32,184,254,1);
+    background: RGBA(255,215,92,1);
     border-radius: 50vh;
     text-decoration: none;
     border:none;
@@ -707,17 +769,6 @@ body {
 
 #title {
     height: 50px;
-}
-
-/*アコーディオンで現れるエリア*/
-.box {
-    display: none;/*はじめは非表示*/
-    background: #f3f3f3;
-    margin:0 auto 20px auto;
-    padding: 3%;
-    width: 50%;
-    color: black;
-    border-radius: 25px;
 }
 
 

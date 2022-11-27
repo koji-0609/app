@@ -20,37 +20,40 @@
 @include('users.header')<br>
 
 <div class="guestindextop">
+    <div class="rod">
+        <button id="rod">更新</button>
+    </div>
     
     <h1>{{ $_POST['title'] }}</h1>
  
 
-    @foreach($index_content as $index => $index_content)
+    @foreach($index_content as $index => $index_content2)
 
-        @if ($index_content['role'] == 0)
+        @if ($index_content2['role'] == 0)
         
                 <div class="title">
                     <button>STAGE{{ $index+1 }}</button><br>
                 </div>
             
             
-                <div class="box" value="{{ $index_content -> role }}">
-                    <p>{{ $index_content -> contents }}</p>
+                <div class="box" value="{{ $index_content2 -> role }}">
+                    <p>{{ $index_content2 -> contents }}</p>
                     <div id="role">
-                        <button id="achieve" value="{{ $index_content -> id }}">達成</button>
+                        <button id="achieve" value="{{ $index_content2 -> id }}">達成</button>
                     </div>
                 </div>
            
-        @else ($index_content['role'] == 1)
+        @else ($index_content2['role'] == 1)
         
-                <div class="title">
+                <div class="title" id="role_title">
                     <button>STAGE{{ $index+1 }}</button><br>
                 </div>
             
             
-                <div class="box" value="{{ $index_content -> role }}">
-                    <p>{{ $index_content -> contents }}</p>
+                <div class="box" value="{{ $index_content2 -> role }}">
+                    <p>{{ $index_content2 -> contents }}</p>
                     <div id="role" class="role_color">
-                        <button id="achieve"  value="{{ $index_content -> id }}">達成</button>
+                        <button id="achieve"  value="{{ $index_content2 -> id }}">達成</button>
                     </div>
                 </div>
             
@@ -60,15 +63,27 @@
     @endforeach    
 
 
-        <div class="title">
-            <button>GOLE</button><br>
-        </div>
-        <div class="box">
-            <p>{{ $index_content -> gole }}</p>
-            <div id="role">
-                <button id="achieve">達成</button>
+ 
+    @if ($gole == "no_gole") 
+
+            <div class="title">
+                <button>GOLE</button><br>
             </div>
-        </div>
+            <div class="box">
+                <p>{{ $index_content2 -> gole }}</p>
+            </div>
+       
+    @else ($gole == "yes_gole") 
+
+            <div class="title" id="role_gole">
+                <button>GOLE</button><br>
+            </div>
+            <div class="box">
+                <p>{{ $index_content2 -> gole }}</p>
+            </div>
+       
+    @endif
+
  
         <div class="stage">
             <form action="{{ route('user_create_index') }}" method = "post">
@@ -107,8 +122,19 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
 $(document).on('click',"#role", function() {
 
    $(this).toggleClass('role_color');
+//    $("#role_title").toggleClass('role_color');
+
 
 });
+
+
+//更新処理
+$(document).on('click',"#rod", function() {
+
+    window.location.reload();
+
+});
+
 
 
 

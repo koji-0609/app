@@ -12,6 +12,62 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+
+        \DB::table('appusers')->insert([
+            [
+                'id' => '1',
+                'name' => 'サンプル',
+                'email' => 'sample@gmail.com',
+                'password' => \Hash::make('sample'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+             ],
+
+        ]);
+
+
+        \DB::table('users_contents')->insert([
+            [
+                'user_id' => '1',
+                'title' => 'サンプルデータ',
+                'contents' => 'サンプル目標１',
+                'gole' => 'サンプルのゴール',
+                'role' => 0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+             ],
+             [
+                'user_id' => '1',
+                'title' => 'サンプルデータ',
+                'contents' => 'サンプル目標２',
+                'gole' => 'サンプルのゴール',
+                'role' => 0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+             ],
+             [
+                'user_id' => '1',
+                'title' => 'サンプルデータ',
+                'contents' => 'サンプル目標３',
+                'gole' => 'サンプルのゴール',
+                'role' => 0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+             ],
+             [
+                'user_id' => '1',
+                'title' => 'サンプルデータ',
+                'contents' => 'サンプル目標４',
+                'gole' => 'サンプルのゴール',
+                'role' => 0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+             ],
+
+        ]);
+
+
         \DB::table('guests_contents')->insert([
             [
                 'title' => '１００万円貯金計画',
@@ -149,5 +205,7 @@ class DatabaseSeeder extends Seeder
             ],
 
         ]);
+
+        
     }
 }

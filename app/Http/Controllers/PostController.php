@@ -149,8 +149,17 @@ class PostController extends Controller
 
         $guest_contents = Guests_content::where('title', '=', $_POST['title']) -> get();
 
+        foreach($guest_contents as $guest_contents2) {
+            if ($guest_contents2['role'] == 0) {
+                $gole = "no_gole";
+                break;
+            }else {
+                $gole = "yes_gole";
+            }
+        }
 
-        return view('users.guest_index', compact('guest_contents'));
+
+        return view('users.guest_index', compact('guest_contents','gole'));
     }
 
  
@@ -342,14 +351,26 @@ class PostController extends Controller
     }
  
     //POSTで来たユーザーIDとタイトルを使って一致するレコードを取得し
-    //ユーザーのindexメニューに渡す処理
+    //ユーザーのコンテンツ一覧（index.blade）に渡す処理
     public function index()
     {
 
         $index_content = Users_content::where('title', '=', $_POST['title']) 
                                      -> where('user_id', '=', Auth::user() -> id) -> get();
+
+                    // dd($index_content);
+
+        foreach($index_content as $index_content2) {
+            if ($index_content2['role'] == 0) {
+                $gole = "no_gole";
+                break;
+            }else {
+                $gole = "yes_gole";
+            }
+        }
+
       
-        return view('users.index', compact('index_content'));
+        return view('users.index', compact('index_content','gole'));
     }
 
 
