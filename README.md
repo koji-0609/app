@@ -33,4 +33,4 @@ MAMP/MySQL/PHP
 ご利用環境のMAMPもしくはXAMPP起動と共に
 phpmyAdminでDBを起動し、ターミナルまたはコマンドプロントで
 「　php artisan db:seed　」を実行してサンプルデータの作成と
-「　php artisan serve 」でサーバーの立ち上げ、表示がされるか確認をしてください。
+「　php artisan serve 」でサーバーの立ち上げ、表示がされるか確認をしてからご利用ください。
