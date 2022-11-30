@@ -39,7 +39,7 @@
         @error('password')
             <div class="error">{{ $message }}</div>
         @enderror 
-        <input  type="text"  name="password" id="text1" placeholder="パスワード" value="{{ old('password') }}" ><br> 
+        <input  type="password"  name="password" id="text1" placeholder="パスワード" value="{{ old('password') }}" ><br> 
 
         <button>確認</button>
        

@@ -39,7 +39,7 @@
         @error('password')
             <div class="error">{{ $message }}</div>
         @enderror
-        <input  type="text"  name="password" id="text1" placeholder="パスワード" value="" ><br> 
+        <input  type="password"  name="password" id="text1" placeholder="パスワード" value="" ><br> 
 
         <div class="a">
             <a href="{{ route('password') }}">パスワードを忘れた方はこちら</a>

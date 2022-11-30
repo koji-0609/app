@@ -38,7 +38,7 @@
             @error('password')
                 <div class="error">{{ $message }}</div>
             @enderror
-            <input  type="text"  name="password" id="text1" placeholder="新しいパスワード" value="{{ old('password') }}" ><br> 
+            <input  type="password"  name="password" id="text1" placeholder="新しいパスワード" value="{{ old('password') }}" ><br> 
             
             @error('password_error')
             <div class="error">{{ $message }}</div>
@@ -46,7 +46,7 @@
             @error('password')
                 <div class="error">{{ $message }}</div>
             @enderror
-            <input  type="text"  name="password2" id="text1" placeholder="新しいパスワード再入力" value="" ><br> 
+            <input  type="password"  name="password2" id="text1" placeholder="新しいパスワード再入力" value="" ><br> 
 
             <div class="button5">
                <button>確認</button>　
